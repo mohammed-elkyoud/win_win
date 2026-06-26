@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import Link from 'next/link'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 
@@ -135,9 +136,9 @@ export default function FAQ() {
           className="text-center mt-12"
         >
           <p className="text-anthracite/50 text-sm mb-4">Vous avez d'autres questions ?</p>
-          <a href="/candidature" className="btn-green">
+          <Link href="/candidature" className="btn-green">
             Contactez-nous directement
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

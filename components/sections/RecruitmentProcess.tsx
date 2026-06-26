@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { Send, FileSearch, PhoneCall, Presentation, CheckSquare, PenLine, BookOpen, MapPin, Rocket } from 'lucide-react'
 
@@ -108,9 +109,9 @@ export default function RecruitmentProcess() {
           transition={{ duration: 0.7, delay: 0.9 }}
           className="text-center mt-12"
         >
-          <a href="/candidature" className="btn-gold">
+          <Link href="/candidature" className="btn-gold">
             Déposer ma candidature
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

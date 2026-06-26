@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
 
@@ -69,10 +70,10 @@ export default function Navbar({ invertScroll = false }: { invertScroll?: boolea
 
           {/* CTA */}
           <div className="hidden lg:block">
-            <a href="/candidature" className="btn-gold text-xs px-6 py-3 gap-2">
+            <Link href="/candidature" className="btn-gold text-xs px-6 py-3 gap-2">
               Postuler maintenant
               <ArrowRight size={14} />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -108,9 +109,9 @@ export default function Navbar({ invertScroll = false }: { invertScroll?: boolea
                 </a>
               ))}
               <div className="pt-2 border-t border-white/10 mt-1">
-                <a href="/candidature" className="btn-gold w-full justify-center" onClick={() => setMenuOpen(false)}>
+                <Link href="/candidature" className="btn-gold w-full justify-center" onClick={() => setMenuOpen(false)}>
                   Postuler maintenant <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>

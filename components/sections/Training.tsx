@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { Search, FileCheck, Calculator, Eye, MessageSquare, TrendingUp, Home, Headphones, Monitor, Award } from 'lucide-react'
 
@@ -26,7 +27,7 @@ export default function Training() {
     <section id="formation" className="section-padding relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <Image
-          src="/images/winwin/formation.png"
+          src="/images/winwin/marrakech.jpeg"
           alt="Programme pédagogique"
           fill
           className="object-cover object-center"
@@ -109,9 +110,9 @@ export default function Training() {
           transition={{ duration: 0.7, delay: 0.9 }}
           className="text-center mt-12"
         >
-          <a href="/candidature" className="btn-gold">
+          <Link href="/candidature" className="btn-gold">
             Rejoindre la formation
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

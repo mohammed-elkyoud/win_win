@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import { Building2, Home, Car, FileText, Scale, CreditCard, GraduationCap, Network, Users2, CheckCircle2, ArrowRight } from 'lucide-react'
@@ -107,10 +108,10 @@ export default function FranchisePack() {
                 </div>
               </div>
 
-              <a href="/candidature" className="btn-gold w-full justify-center animate-pulse-gold">
+              <Link href="/candidature" className="btn-gold w-full justify-center animate-pulse-gold">
                 Je veux ce pack
                 <ArrowRight size={14} />
-              </a>
+              </Link>
               <p className="text-white/30 text-xs mt-4">*Sous conditions d'éligibilité au programme</p>
             </div>
           </motion.div>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Crown, Handshake, Globe, TrendingUp, Play, X } from 'lucide-react'
 
@@ -97,10 +98,10 @@ export default function Hero() {
 
           {/* CTAs */}
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 mb-6">
-            <a href="/candidature" className="btn-gold animate-pulse-gold text-sm">
+            <Link href="/candidature" className="btn-gold animate-pulse-gold text-sm">
               Je veux changer de vie
               <ArrowRight size={15} />
-            </a>
+            </Link>
             <a href="#pack" className="btn-outline-gold text-sm">
               Découvrir le Pack
             </a>
@@ -161,7 +162,7 @@ export default function Hero() {
                 <X size={20} />
               </button>
               <video
-                src="/images/winwin/winwin.mp4"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/winwin/winwin.mp4`}
                 controls
                 autoPlay
                 className="w-full aspect-video"

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { MapPin, Mail, Linkedin, ArrowUp } from 'lucide-react'
 
 const links = {
@@ -32,7 +33,7 @@ export default function Footer() {
       {/* Premium pool/spa background */}
       <div className="absolute inset-0">
         <Image
-          src="/images/winwin/piscine-sport.jpg"
+          src="/images/winwin/grand-riad.jpg"
           alt="Piscine de luxe Marrakech — Win Win Immo"
           fill
           className="object-cover object-center"
@@ -111,9 +112,9 @@ export default function Footer() {
               </p>
               <p className="text-white/50 text-sm">Votre nouvelle vie à Marrakech commence maintenant.</p>
             </div>
-            <a href="/candidature" className="btn-gold flex-shrink-0">
+            <Link href="/candidature" className="btn-gold flex-shrink-0">
               Postuler maintenant
-            </a>
+            </Link>
           </div>
 
           {/* Bottom bar */}

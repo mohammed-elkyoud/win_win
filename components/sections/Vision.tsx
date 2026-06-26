@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { MapPin, Target, Crown } from 'lucide-react'
 
@@ -157,9 +158,9 @@ export default function Vision() {
           <p className="text-white/55 text-lg mb-8 max-w-lg mx-auto">
             Les premières places sont limitées. Rejoignez les agents qui écrivent l'histoire de Win Win Immo au Maroc.
           </p>
-          <a href="/candidature" className="btn-gold animate-pulse-gold">
+          <Link href="/candidature" className="btn-gold animate-pulse-gold">
             Postuler maintenant — Places limitées
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

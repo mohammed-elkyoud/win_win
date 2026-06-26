@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { Briefcase, ShoppingBag, Building, Users, UserCheck, RefreshCcw, CheckCircle2, ArrowRight } from 'lucide-react'
 
@@ -99,10 +100,10 @@ export default function Profile() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.8 }}
             >
-              <a href="/candidature" className="btn-green gap-2">
+              <Link href="/candidature" className="btn-green gap-2">
                 Je corresponds à ce profil
                 <ArrowRight size={15} />
-              </a>
+              </Link>
             </motion.div>
           </div>
 
