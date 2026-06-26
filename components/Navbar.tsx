@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
 
@@ -17,6 +18,8 @@ const navLinks = [
 export default function Navbar({ invertScroll = false }: { invertScroll?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -42,7 +45,7 @@ export default function Navbar({ invertScroll = false }: { invertScroll?: boolea
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="group transition-transform duration-300 hover:scale-105">
+          <Link href="/" className="group transition-transform duration-300 hover:scale-105">
             <div className="relative h-14 w-52">
               <Image
                 src="/images/winwin/immozen-transparent.png"
@@ -52,19 +55,19 @@ export default function Navbar({ invertScroll = false }: { invertScroll?: boolea
                 priority
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                href={isHome ? link.href : `/${link.href}`}
                 className="relative text-white/75 hover:text-white text-sm font-medium tracking-wide transition-all duration-200 group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full rounded-full" />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -99,14 +102,14 @@ export default function Navbar({ invertScroll = false }: { invertScroll?: boolea
           >
             <div className="container-custom py-5 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  href={isHome ? link.href : `/${link.href}`}
                   className="text-white/80 hover:text-gold py-2.5 px-3 rounded-lg text-base font-medium transition-all hover:bg-white/5"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="pt-2 border-t border-white/10 mt-1">
                 <Link href="/candidature" className="btn-gold w-full justify-center" onClick={() => setMenuOpen(false)}>
