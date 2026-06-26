@@ -99,7 +99,7 @@ export default function Training() {
           transition={{ duration: 0.7, delay: 0.9 }}
           className="text-center mt-12"
         >
-          <a href="#candidature" className="btn-gold">
+          <a href="/candidature" className="btn-gold">
             Rejoindre la formation
           </a>
         </motion.div>

@@ -135,7 +135,7 @@ export default function FAQ() {
           className="text-center mt-12"
         >
           <p className="text-anthracite/50 text-sm mb-4">Vous avez d'autres questions ?</p>
-          <a href="#candidature" className="btn-green">
+          <a href="/candidature" className="btn-green">
             Contactez-nous directement
           </a>
         </motion.div>

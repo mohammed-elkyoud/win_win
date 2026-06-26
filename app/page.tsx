@@ -12,7 +12,6 @@ import Profile from '@/components/sections/Profile'
 import RecruitmentProcess from '@/components/sections/RecruitmentProcess'
 import Vision from '@/components/sections/Vision'
 import FAQ from '@/components/sections/FAQ'
-import ApplicationForm from '@/components/sections/ApplicationForm'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -32,7 +31,6 @@ export default function Home() {
       <RecruitmentProcess />
       <Vision />
       <FAQ />
-      <ApplicationForm />
       <Footer />
     </main>
   )

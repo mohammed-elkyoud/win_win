@@ -111,7 +111,7 @@ export default function Footer() {
               </p>
               <p className="text-white/50 text-sm">Votre nouvelle vie à Marrakech commence maintenant.</p>
             </div>
-            <a href="#candidature" className="btn-gold flex-shrink-0">
+            <a href="/candidature" className="btn-gold flex-shrink-0">
               Postuler maintenant
             </a>
           </div>

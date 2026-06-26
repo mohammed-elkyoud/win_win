@@ -1,8 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { ArrowRight, Crown, Handshake, Globe, TrendingUp, Play } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowRight, Crown, Handshake, Globe, TrendingUp, Play, X } from 'lucide-react'
 
 const features = [
   { icon: Crown,      label: 'Une marque puissante' },
@@ -21,6 +22,8 @@ const item = {
 }
 
 export default function Hero() {
+  const [videoOpen, setVideoOpen] = useState(false)
+
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
 
@@ -94,7 +97,7 @@ export default function Hero() {
 
           {/* CTAs */}
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 mb-6">
-            <a href="#candidature" className="btn-gold animate-pulse-gold text-sm">
+            <a href="/candidature" className="btn-gold animate-pulse-gold text-sm">
               Je veux changer de vie
               <ArrowRight size={15} />
             </a>
@@ -111,10 +114,11 @@ export default function Hero() {
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 1.2 }}
-        className="absolute bottom-10 right-8 z-20 hidden lg:flex"
+        className="absolute bottom-6 right-4 sm:right-6 lg:right-8 z-20 flex"
       >
         <div
-          className="inline-flex items-center gap-5 px-7 py-5 rounded-2xl border border-gold/30 cursor-pointer hover:border-gold/60 transition-all duration-300"
+          onClick={() => setVideoOpen(true)}
+          className="inline-flex items-center gap-5 px-7 py-5 rounded-2xl border border-gold/30 cursor-pointer hover:border-gold/60 hover:scale-105 transition-all duration-300"
           style={{ background: 'rgba(2,15,5,0.65)', backdropFilter: 'blur(10px)' }}
         >
           <div
@@ -129,6 +133,43 @@ export default function Hero() {
           </div>
         </div>
       </motion.div>
+
+      {/* Modal vidéo */}
+      <AnimatePresence>
+        {videoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            style={{ background: 'rgba(0,0,0,0.88)' }}
+            onClick={() => setVideoOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl"
+              onClick={e => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setVideoOpen(false)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                style={{ background: 'rgba(0,0,0,0.50)' }}
+              >
+                <X size={20} />
+              </button>
+              <video
+                src="/images/winwin/winwin.mp4"
+                controls
+                autoPlay
+                className="w-full aspect-video"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </section>
   )

@@ -161,7 +161,7 @@ export default function NetworkAdvantages() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-white/10 text-center">
-                  <a href="#candidature" className="btn-gold w-full justify-center text-xs">
+                  <a href="/candidature" className="btn-gold w-full justify-center text-xs">
                     Rejoindre le réseau
                     <ArrowRight size={13} />
                   </a>

@@ -107,7 +107,7 @@ export default function FranchisePack() {
                 </div>
               </div>
 
-              <a href="#candidature" className="btn-gold w-full justify-center animate-pulse-gold">
+              <a href="/candidature" className="btn-gold w-full justify-center animate-pulse-gold">
                 Je veux ce pack
                 <ArrowRight size={14} />
               </a>

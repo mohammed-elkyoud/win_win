@@ -204,6 +204,7 @@ body {
   box-shadow: 0 0 0 3px rgba(165,210,50,0.12);
 }
 .input-premium::placeholder { color: #9CA3AF; }
+.label-form { @apply block text-xs font-semibold text-anthracite/60 uppercase tracking-wider mb-2; }
 
 /* ── Pulse animation for CTA ── */
 .animate-pulse-gold { animation: pulseBrand 2.5s infinite; }

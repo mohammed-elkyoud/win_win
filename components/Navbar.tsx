@@ -13,7 +13,7 @@ const navLinks = [
   { href: '#processus', label: 'Processus' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ invertScroll = false }: { invertScroll?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -23,16 +23,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const hasBg = invertScroll ? !scrolled : scrolled
+  const bgStyle = invertScroll
+    ? { background: 'rgba(6,115,61,0.96)' }
+    : { background: 'rgba(3,26,12,0.96)' }
+
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-green-forest/96 backdrop-blur-xl shadow-2xl shadow-black/20'
-          : 'bg-transparent'
+        hasBg ? 'backdrop-blur-xl shadow-2xl shadow-black/20' : 'bg-transparent'
       }`}
+      style={hasBg ? bgStyle : {}}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
@@ -65,7 +69,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:block">
-            <a href="#candidature" className="btn-gold text-xs px-6 py-3 gap-2">
+            <a href="/candidature" className="btn-gold text-xs px-6 py-3 gap-2">
               Postuler maintenant
               <ArrowRight size={14} />
             </a>
@@ -104,7 +108,7 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="pt-2 border-t border-white/10 mt-1">
-                <a href="#candidature" className="btn-gold w-full justify-center" onClick={() => setMenuOpen(false)}>
+                <a href="/candidature" className="btn-gold w-full justify-center" onClick={() => setMenuOpen(false)}>
                   Postuler maintenant <ArrowRight size={14} />
                 </a>
               </div>

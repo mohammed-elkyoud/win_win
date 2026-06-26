@@ -122,15 +122,8 @@ export default function WhyMorocco() {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Badge Phase */}
-              <div className="absolute top-5 left-5 z-10">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider"
-                  style={{ background: cities[current].phase === 'Phase 1' ? 'rgba(165,210,50,0.90)' : 'rgba(201,169,110,0.85)', color: '#020f05' }}>
-                  {cities[current].phase}
-                </span>
-              </div>
 
-              {/* Contenu bas */}
+{/* Contenu bas */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`text-${current}`}

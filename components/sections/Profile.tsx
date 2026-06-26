@@ -99,7 +99,7 @@ export default function Profile() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.8 }}
             >
-              <a href="#candidature" className="btn-green gap-2">
+              <a href="/candidature" className="btn-green gap-2">
                 Je corresponds à ce profil
                 <ArrowRight size={15} />
               </a>
