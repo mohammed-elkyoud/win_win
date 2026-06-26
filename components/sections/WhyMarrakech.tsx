@@ -21,15 +21,15 @@ export default function WhyMarrakech() {
     <section className="section-padding relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <Image
-          src="/images/winwin/sultana.webp"
-          alt="La Sultana — Riad de luxe à Marrakech"
+          src="/images/winwin/pourquoi.png"
+          alt="Pourquoi Marrakech"
           fill
           className="object-cover object-center"
           quality={85}
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(150deg, rgba(2,15,5,0.96) 0%, rgba(6,115,61,0.90) 50%, rgba(10,174,61,0.82) 100%)' }}
+          style={{ background: 'linear-gradient(150deg, rgba(2,15,5,0.55) 0%, rgba(6,115,61,0.45) 50%, rgba(10,174,61,0.35) 100%)' }}
         />
       </div>
       <div className="absolute inset-0 moroccan-pattern opacity-25" />

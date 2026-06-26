@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { Search, FileCheck, Calculator, Eye, MessageSquare, TrendingUp, Home, Headphones, Monitor, Award } from 'lucide-react'
 
@@ -23,10 +24,19 @@ export default function Training() {
 
   return (
     <section id="formation" className="section-padding relative overflow-hidden" ref={ref}>
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(150deg, #031a0c, #06733D 50%, #0AAE3D)' }}
-      />
+      <div className="absolute inset-0">
+        <Image
+          src="/images/winwin/formation.png"
+          alt="Programme pédagogique"
+          fill
+          className="object-cover object-center"
+          quality={85}
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(150deg, rgba(2,15,5,0.55) 0%, rgba(6,115,61,0.45) 50%, rgba(10,174,61,0.35) 100%)' }}
+        />
+      </div>
       <div className="absolute inset-0 moroccan-pattern opacity-30" />
       <div
         className="absolute bottom-0 right-0 w-[600px] h-[600px] pointer-events-none"
