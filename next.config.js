@@ -3,7 +3,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
   output: 'export',
-  basePath: '/win_win',
+  basePath: isProd ? '/win_win' : '',
   images: {
     loader: 'custom',
     loaderFile: './lib/imageLoader.ts',
