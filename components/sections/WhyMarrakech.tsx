@@ -21,7 +21,7 @@ export default function WhyMarrakech() {
     <section className="section-padding relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <Image
-          src="/images/winwin/pourquoi.png"
+          src="/images/winwin/sultana.webp"
           alt="Pourquoi Marrakech"
           fill
           className="object-cover object-center"
