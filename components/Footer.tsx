@@ -76,7 +76,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-3 text-white/45 text-sm">
                   <Mail size={14} className="text-gold flex-shrink-0" />
-                  <span>contact@winwinimmo.com</span>
+                  <span>contact@immozengroupe.com</span>
                 </div>
               </div>
             </div>

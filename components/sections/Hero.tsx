@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Crown, Handshake, Globe, TrendingUp, Play, X } from 'lucide-react'
 
 const features = [
-  { icon: Crown,      label: 'Une marque puissante' },
-  { icon: Handshake,  label: 'Un accompagnement de A à Z' },
-  { icon: Globe,      label: 'Un réseau international' },
-  { icon: TrendingUp, label: 'Un avenir à haute valeur' },
+  { icon: Crown,      label: 'Une marque puissante',        href: '/marque' },
+  { icon: Handshake,  label: 'Un accompagnement de A à Z', href: '/accompagnement' },
+  { icon: Globe,      label: 'Un réseau international',     href: '/reseau' },
+  { icon: TrendingUp, label: 'Un avenir à haute valeur',    href: '/avenir' },
 ]
 
 const container = {
@@ -80,9 +80,10 @@ export default function Hero() {
           {/* Cards features */}
           <motion.div variants={item} className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
             {features.map((f, i) => (
-              <div
+              <Link
                 key={i}
-                className="flex flex-col items-center gap-2 py-4 px-2 rounded-xl text-center border border-white/10"
+                href={f.href}
+                className="flex flex-col items-center gap-2 py-4 px-2 rounded-xl text-center border border-white/10 hover:border-gold/50 hover:scale-105 transition-all duration-300 cursor-pointer"
                 style={{ background: 'rgba(2,15,5,0.55)', backdropFilter: 'blur(8px)' }}
               >
                 <div
@@ -92,7 +93,7 @@ export default function Hero() {
                   <f.icon size={16} className="text-gold" />
                 </div>
                 <span className="text-white/80 text-[11px] font-medium leading-snug uppercase tracking-wide">{f.label}</span>
-              </div>
+              </Link>
             ))}
           </motion.div>
 
